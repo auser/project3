@@ -8,7 +8,7 @@ import PetCard from '../components/PetCard';
 import { format } from 'date-fns';
 import truncate from '../utilities/truncate';
 import PetSearch from '../components/PetSearch';
-import { MapInput, MultipleMarkerMap } from '../components/MapInput'
+import { MapInput, MultiplePetMap } from '../components/MapInput'
 import PageListWrapper from '../assets/wrappers/PetListPage'
 import { petAll } from '../services/pet';
 
@@ -73,7 +73,7 @@ const PetListPage = () => {
   //   setFilters({ ...filters, lat, lng, distance });
   // };
 
-  // <MultipleMarkerMap markers={pets.map(p => p.position)} onMove={handleMapMove} />
+  // <MultiplePetMap markers={pets.map(p => p.position)} onMove={handleMapMove} />
 
   const handleMapMove = (lat, lng, distance) => {
     setFilters({ ...filters, lat, lng, distance });
@@ -86,7 +86,7 @@ const PetListPage = () => {
       </aside>
 
       <MapInput>
-        <MultipleMarkerMap markers={filteredPets.map(p => p.position)} onMove={handleMapMove} />
+        <MultiplePetMap pets={filteredPets} onMove={handleMapMove} />
       </MapInput>
 
       <PageListWrapper>

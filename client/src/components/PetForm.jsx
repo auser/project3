@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 // import MapInput from './MapInput';
 // import PetInputMap from './PetInputMap';
 import MultipleImageInput from './MultipleImageInput';
-import { MapInput, SingleMarkerMap } from '../components/MapInput';
+import { MapInput, SinglePetMap } from '../components/MapInput';
 
 const PetForm = ({
   pet,
@@ -168,7 +168,7 @@ const PetForm = ({
           onPetChange({ ...pet, position: value });
         }}
       >
-        <SingleMarkerMap marker={pet.position} />
+        <SinglePetMap pet={pet} />
       </MapInput>
 
       <button type='submit'>{buttonLabel}</button>

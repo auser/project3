@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 // import MapInput from '../components/MapInput';
 import AuthenticationContext from '../context/authentication';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { MapInput, SingleMarkerMap } from '../components/MapInput';
+import { MapInput, SinglePetMap } from '../components/MapInput';
 import PetDetailWrapper from '../assets/wrappers/PetDetailWrapper';
 import { format } from 'date-fns';
 import '@splidejs/react-splide/css';
@@ -212,7 +212,7 @@ const PetDetailPage = () => {
           </div>
 
           <MapInput>
-            <SingleMarkerMap marker={pet.position} />
+            <SinglePetMap marker={pet.position} />
           </MapInput>
         </PetDetailWrapper>
       )}

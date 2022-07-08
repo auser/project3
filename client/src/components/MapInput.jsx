@@ -6,25 +6,26 @@ import mapStyles from '../components/MapStyles'
 
 const libraries = ["places"];
 
-export const SingleMarkerMap = ({ marker, ...props }) => {
-
+export const SinglePetMap = ({ pet, ...props }) => {
+  const navigate = useNavigate();
   const icon = {
     url: '/paw.svg',
     scaledSize: new window.google.maps.Size(30, 30),
     origin: new window.google.maps.Point(0, 0),
     anchor: new window.google.maps.Point(15, 15)
   }
+  const handleClick = () => navigate.push(`/pets/${pet.id}`)
   return (<>
-    <Marker icon={icon} position={marker} />
+    <Marker icon={icon} position={pet.position} onClick={handleClick} />
   </>)
 }
 
-export const MultipleMarkerMap = ({ markers, ...props }) => {
+export const MultiplePetMap = ({ pets, ...props }) => {
   return (
     <>
-      {markers.map(marker => <SingleMarkerMap
+      {pets.map(pet => <SinglePetMap
         key={marker.lat}
-        marker={marker}
+        pet={pet}
         {...props} />)}
     </>
   )
